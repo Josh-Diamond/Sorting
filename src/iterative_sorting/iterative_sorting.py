@@ -1,5 +1,5 @@
 # TO-DO: Complete the selection_sort() function below 
-def selection_sort( arr ):
+def selection_sort( arr ): # finds smallest value in set and swaps with current index (left => right)
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
         cur_index = i
