@@ -30,6 +30,8 @@ def bubble_sort( arr ):
                 arr[i + 1] = arr[i]
                 arr[i] = swap
                 curr_swaps += 1
+
+                # arr[cur_index], arr[smallest_index] = arr[smallest_index], arr[cur_index]
     return arr
 
 
