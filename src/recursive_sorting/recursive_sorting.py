@@ -1,4 +1,4 @@
-# TO-DO: complete the helper function below to merge 2 sorted arrays
+# TO-DO: complete the helper function below to merge 2 sorted lists
 def merge(listA, listB): # merges sub-lists into sorted list
     sorted_list = []
     a_idx = 0
@@ -11,18 +11,18 @@ def merge(listA, listB): # merges sub-lists into sorted list
             sorted_list.append(listB[b_idx])
             b_idx += 1
     if a_idx == len(listA):
-        sorted_list.extend((listB[b_idx:])) # if arrA has been looped through, no need to compare arrA value with arrB value, push rest of arrB to sorted_arr
+        sorted_list.extend((listB[b_idx:])) # if listA has been looped through, no need to compare listA value with listB value, push rest of listB to sorted_list
     else:
         sorted_list.extend(listA[a_idx:])
     return sorted_list
 
 def merge_sort(list): # breaks down lists
-    if len(list) <= 1: # if arr has zero or one items, it is already sorted
+    if len(list) <= 1: # if list has zero or one items, it is already sorted
         return list
     # split list in half and call merge sort recursively on each half
     left, right = merge_sort(list[:int(len(list)/2)]), merge_sort((list[int(len(list)/2):]))
 
-    # merge sub-lists into sorted_arr
+    # merge sub-lists into sorted_list
     return merge(left, right)
 
 birthday = [1991, 10, 21]
