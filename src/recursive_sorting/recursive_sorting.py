@@ -1,26 +1,26 @@
 # TO-DO: complete the helper function below to merge 2 sorted arrays
-def merge(arrA, arrB): # merges sub-lists into sorted list
-    sorted_arr = []
+def merge(listA, listB): # merges sub-lists into sorted list
+    sorted_list = []
     a_idx = 0
     b_idx = 0
-    while a_idx < len(arrA) and b_idx < len(arrB):
-        if arrA[a_idx] < arrB[b_idx]:
-            sorted_arr.append(arrA[a_idx])
+    while a_idx < len(listA) and b_idx < len(listB):
+        if listA[a_idx] < listB[b_idx]:
+            sorted_list.append(listA[a_idx])
             a_idx += 1
         else:
-            sorted_arr.append(arrB[b_idx])
+            sorted_list.append(listB[b_idx])
             b_idx += 1
-    if a_idx == len(arrA):
-        sorted_arr.extend((arrB[b_idx:])) # if arrA has been looped through, no need to compare arrA value with arrB value, push rest of arrB to sorted_arr
+    if a_idx == len(listA):
+        sorted_list.extend((listB[b_idx:])) # if arrA has been looped through, no need to compare arrA value with arrB value, push rest of arrB to sorted_arr
     else:
-        sorted_arr.extend(arrA[a_idx:])
-    return sorted_arr
+        sorted_list.extend(listA[a_idx:])
+    return sorted_list
 
-def merge_sort(arr): # breaks down lists
-    if len(arr) <= 1: # if arr has zero or one items, it is already sorted
-        return arr
+def merge_sort(list): # breaks down lists
+    if len(list) <= 1: # if arr has zero or one items, it is already sorted
+        return list
     # split list in half and call merge sort recursively on each half
-    left, right = merge_sort(arr[:int(len(arr)/2)]), merge_sort((arr[int(len(arr)/2):]))
+    left, right = merge_sort(list[:int(len(list)/2)]), merge_sort((list[int(len(list)/2):]))
 
     # merge sub-lists into sorted_arr
     return merge(left, right)
